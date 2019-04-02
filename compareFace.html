@@ -201,6 +201,8 @@
         } else {
             result += '可能性一般';
         }
+        result += '\n' + '可信度:' + e.confidence + '%' +
+                  '\n' + '请求用时：' + e.time_used + 'ms'
 
         let resultView = document.getElementById('result');
         resultView.innerText = result;

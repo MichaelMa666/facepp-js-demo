@@ -49,6 +49,12 @@
         padding: 20px;
         max-width: 600px;
     }
+    #result{
+        left: 10%;
+        top: 30px;
+        padding: 0 60px;
+        text-align: left;
+    }
 </style>
 
 <body>
@@ -60,6 +66,7 @@
     <img id="preview" />
 
     <!-- <div id="text"></div> -->
+    <div id="result"></div>
     <div id="resView" style="display:none">
         <pre id="res" ></pre>
     </div>
@@ -123,6 +130,15 @@
         // textView.innerText = JSON.stringify(e,null,"\t");、
         let resDom = document.getElementById('res')        
         resDom.innerText = JSON.stringify(e,null,'\t')
+
+        let resultDom = document.getElementById('result')
+        let result = ''
+        result += '卡号：' + e.bank_cards[0].number + '\n'
+                + '银行：' + e.bank_cards[0].bank + '\n'
+                + '用时：' + e.time_used
+        
+
+        resultDom.innerText = result
         
         document.getElementById('resView').style.display = 'flex'
     }
